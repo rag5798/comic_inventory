@@ -115,7 +115,6 @@ function display_issue(data, volume, output_section) {
 // Get volume and its issues
 async function get_volume(event) {
     const output_section = document.querySelector('#output');
-    output_section.innerHTML = ''; // Clear previous content
 
     const url = event.target.dataset.url;
 
@@ -142,7 +141,6 @@ async function get_volume(event) {
               output_section.appendChild(errorMsg);
             }
           
-            // wait 1 second before next request
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
 
@@ -187,6 +185,7 @@ async function get_comic(event) {
         const name = document.createElement('p');
         const description = document.createElement('p');
         const year = document.createElement('p');
+        const seriesButton = document.createElement('button');
   
         img.src = element.image.medium_url;
         name.textContent = element.name;
@@ -194,6 +193,8 @@ async function get_comic(event) {
         name.classList.add('name');
         description.innerHTML = element.description || 'No description available.';
         year.textContent = `Year: ${element.start_year || 'Unknown'}`;
+        addButton.textContent = "Expand Series";
+        addButton.classList.add('add-button'); 
   
         section.appendChild(img);
         section.appendChild(name);
@@ -202,7 +203,7 @@ async function get_comic(event) {
         output_section.appendChild(section);
       });
   
-      const links = document.querySelectorAll('.name');
+      const links = document.querySelectorAll('.add-button');
       links.forEach(el => el.addEventListener('click', get_volume));
     } catch (err) {
       console.error("Error fetching comic data:", err);
