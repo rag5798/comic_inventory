@@ -25,7 +25,7 @@ if (!user) {
 // Fetch single issue data
 async function fetch_issue(url) {
     try {
-        const response = await fetch(`http://localhost:3000/api/issue?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`https://api.gmancomics.org/api/issue?url=${encodeURIComponent(url)}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         return { success: true, data: data.results };
@@ -120,7 +120,7 @@ async function get_volume(event) {
     const url = event.target.dataset.url;
 
     try {
-        const response = await fetch(`http://localhost:3000/api/issue?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`https://api.gmancomics.org/api/issue?url=${encodeURIComponent(url)}`);
         if (!response.ok) throw new Error('Network response was not ok');
 
         const data = await response.json();
@@ -173,7 +173,7 @@ async function get_comic(event) {
     const category = dropdown.value;
     const searchTerm = searchbar.value;
   
-    const url = `http://localhost:3000/api/comic?category=${category}&search=${encodeURIComponent(searchTerm)}`;
+    const url = `https://api.gmancomics.org/api/comic?category=${category}&search=${encodeURIComponent(searchTerm)}`;
   
     try {
       const server_response = await fetch(url);
