@@ -193,10 +193,11 @@ async function get_comic(event) {
         name.classList.add('name');
         description.innerHTML = element.description || 'No description available.';
         year.textContent = `Year: ${element.start_year || 'Unknown'}`;
-        addButton.textContent = "Expand Series";
-        addButton.classList.add('add-button'); 
+        seriesButton.textContent = "Expand Series";
+        seriesButton.classList.add('add-button'); 
   
         section.appendChild(img);
+        section.appendChild(seriesButton)
         section.appendChild(name);
         section.appendChild(description);
         section.appendChild(year);
