@@ -1,0 +1,47 @@
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+#store-output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+  
+section {
+    flex: 0 1 300px;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+a {
+    display: block;
+    margin-top: 0.5rem;
+    color: blue;
+}
+
+.view-all-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.view-all-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.view-all-button:hover {
+    background-color: #0056b3;
+}

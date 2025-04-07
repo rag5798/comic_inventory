@@ -1,0 +1,133 @@
+/* === GENERAL RESET === */
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* === HEADER === */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header img {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+/* === SEARCH FORM === */
+#search_form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+#search_form select,
+#search_form input,
+#search_form button {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+}
+
+#search_form select,
+#search_form input {
+    background: #fff;
+    color: #333;
+}
+
+#search_form button {
+    background: #f39c12;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* === OUTPUT === */
+#output {
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+#output section {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#output section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#output img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+#output p {
+    margin: 0.25rem 0;
+    text-align: center;
+}
+
+.add-button {
+    margin-top: 0.5rem;
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background: #219150;
+}
+
+/* === FOOTER === */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+footer img {
+    height: 30px;
+    margin: 0 1rem;
+}
+
+.home-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.home-link:hover {
+    color: #f39c12;
+    text-decoration: underline;
+}

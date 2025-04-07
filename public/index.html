@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comic Store</title>
+    <script type="module" src="comic.js"></script>
+    <link rel="stylesheet" href="comic.css">
+  </head>  
+  <body>
+    <header>
+      <div class="header-bar">
+        <h1>📚 The Multiverse Comic Co.</h1>
+        <div id="user-section">
+          <button class="login">Login</button>
+          <div id="profile" style="display: none;">
+            <img id="user-pic" src="" alt="Profile" />
+            <span id="user-name"></span>
+            <button id="logout">Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="announcement">
+        <h2>🗞️ Announcements</h2>
+        <p>New issues of <strong>Spider-Man 2099</strong> just arrived!</p>
+      </section>
+      <section class="events">
+        <h2>📅 Events & Signings</h2>
+        <ul>
+          <li>May 10 — Sketch Jam w/ Local Artists</li>
+          <li>May 17 — Meet the Creator: **Indie Showcase**</li>
+        </ul>
+      </section>
+      <section class="sales">
+        <h2>💥 Sales</h2>
+        <p>Back issues 50% off all weekend!</p>
+      </section>
+      <section class="store-cta">
+        <h2>🛒 Ready to explore the spotlight?</h2>
+        <button id="visit-store">Browse Featured Comics</button>
+        <button id="visit-inventory">My Inventory</button>
+        <button id="visit-search">Search Comics</button>
+      </section>   
+    </main>
+    <footer>
+      <h3>Store Locations</h3>
+      <ul>
+        <li><a href="#">📍 Downtown - 123 Main St.</a></li>
+        <li><a href="#">📍 Midtown - 456 Comic Blvd.</a></li>
+        <li><a href="#">📍 Online Store</a></li>
+      </ul>
+    </footer>
+  </body>  
+</html>
