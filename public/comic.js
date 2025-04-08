@@ -1,5 +1,3 @@
-// comic.js
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, doc, getDoc, setDoc, serverTimestamp  } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
@@ -18,16 +16,13 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// LOGIN FUNCTION
+
 document.querySelector('.login').addEventListener('click', async () => {
   const provider = new GoogleAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
-    alert(`Hello, ${user.displayName}`);
-    console.log(user);
 
-    // Use UID as the document ID
     const userDocRef = doc(db, "users", user.uid);
     const snap = await getDoc(userDocRef);
 

@@ -1,9 +1,16 @@
-/* === GENERAL RESET === */
 body {
     margin: 0;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     background: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
 }
 
 /* === HEADER === */
@@ -59,6 +66,8 @@ header img {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
+    border: 2px dashed #333;
+    margin-bottom: 2rem;
 }
 
 #output section {
@@ -70,6 +79,7 @@ header img {
     flex-direction: column;
     align-items: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 400px; 
 }
 
 #output section:hover {
@@ -80,10 +90,11 @@ header img {
 #output img {
     width: 100%;
     max-width: 200px;
-    height: auto;
+    height: 300px;
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 0.5rem;
+    display: block;
 }
 
 #output p {
@@ -99,7 +110,11 @@ header img {
     padding: 0.5rem;
     border-radius: 6px;
     cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
 }
+
 
 .add-button:hover {
     background: #219150;
@@ -130,4 +145,25 @@ footer img {
 .home-link:hover {
     color: #f39c12;
     text-decoration: underline;
+}
+
+.description {
+    width: 100%;
+    text-align: left;
+}
+
+.description .collapsed {
+    max-height: 4.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+.toggle-description {
+    background: none;
+    color: #007bff;
+    border: none;
+    padding: 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
 }
