@@ -1,5 +1,5 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Open Sans', Georgia, 'Times New Roman', Times, serif;
     background: #fefefe;
     color: #333;
     padding: 0;
@@ -88,6 +88,7 @@ section {
 
 h1, h2, h3 {
     margin-top: 0;
+      
 }
 
 footer {
