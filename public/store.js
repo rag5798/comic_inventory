@@ -19,7 +19,7 @@ const db = getFirestore(app);
 const output = document.getElementById("store-output");
 
 let lastVisible = null;
-const pageSize = 20;
+const pageSize = 10;
 let isLoading = false;
 
 async function loadStoreComics(initial = false) {
