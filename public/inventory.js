@@ -27,11 +27,11 @@ let groupBySeries = false;
 groupBtn.addEventListener("click", () => {
     groupBySeries = !groupBySeries;
     groupBtn.textContent = groupBySeries ? "Ungroup Series" : "Group by Series";
-    loadInventory(); // refresh view
+    loadInventory();
 });
 
 async function loadInventory() {
-    output.innerHTML = ""; // clear
+    output.innerHTML = "";
 
     const user = auth.currentUser;
     if (!user) return;
@@ -95,7 +95,7 @@ function renderComicCard(comic) {
     remove.addEventListener("click", async () => {
         if (confirm("Remove this comic from your inventory?")) {
         await deleteDoc(doc(db, "comics", comic.id));
-        loadInventory(); // refresh
+        loadInventory();
         }
     });
 
@@ -112,8 +112,6 @@ onAuthStateChanged(auth, (user) => {
         output.innerHTML = "<p>Please log in to view your inventory.</p>";
         return;
     }
-
-    userInfo.innerHTML = `<p>Logged in as <strong>${user.displayName}</strong></p>`;
     loadInventory();
 });
 
