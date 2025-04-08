@@ -1,13 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import {
-    getFirestore,
-    collection,
-    query,
-    where,
-    getDocs,
-    limit,
-    orderBy 
-  } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { getFirestore, collection, query, where, orderBy, limit, getDocs, startAfter } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
   
 
 // Firebase config
@@ -35,17 +28,24 @@ async function loadStoreComics(initial = false) {
     const loadBtn = document.getElementById("load-more");
     loadBtn.disabled = true;
     loadBtn.textContent = "Loading...";
-    let q = query(
+    let q;
+
+    if (lastVisible) {
+    q = query(
+        collection(db, "comics"),
+        where("store", "==", true),
+        orderBy("createdAt", "desc"),
+        startAfter(lastVisible),
+        limit(pageSize)
+    );
+    } else {
+    q = query(
         collection(db, "comics"),
         where("store", "==", true),
         orderBy("createdAt", "desc"),
         limit(pageSize)
     );
-
-    if (!initial && lastVisible) {
-        q = query(q, startAfter(lastVisible));
     }
-
     const snapshot = await getDocs(q);
 
     if (snapshot.empty) {

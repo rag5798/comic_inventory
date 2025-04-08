@@ -151,7 +151,7 @@ async function get_volume(event) {
 
       if (result.success) {
         display_issue(result.data, data.results.name, output_section);
-        errorCount = 0; // Reset error streak
+        errorCount = 0;
       } else {
         errorCount++;
         const errorMsg = document.createElement('p');
@@ -167,8 +167,6 @@ async function get_volume(event) {
           break;
         }
       }
-
-      await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
   } catch (error) {
@@ -201,10 +199,10 @@ async function get_comic(event, isLoadMore = false) {
     const searchbar = document.querySelector('#searchbar');
     category = dropdown.value;
     searchTerm = searchbar.value;
-    currentOffset = 0; // reset on new search
+    currentOffset = 0;
   }
 
-  const url = `https://api.gmancomics.org/api/comic?category=${category}&search=${encodeURIComponent(searchTerm)}&limit=${pageSize}&offset=${currentOffset}`;
+  const url = `https://api.gmancomics.org/api/comic?category=${category}&search=${encodeURIComponent(searchTerm)}`;
 
   try {
     const server_response = await fetch(url);
@@ -214,7 +212,6 @@ async function get_comic(event, isLoadMore = false) {
 
     for (const element of server_json.results) {
       try {
-        // same as before...
         const section = document.createElement('section');
         const img = document.createElement('img');
         const name = document.createElement('p');
@@ -247,8 +244,6 @@ async function get_comic(event, isLoadMore = false) {
         output_section.appendChild(errorMsg);
         if (errorCount >= 3) break;
       }
-
-      await new Promise(resolve => setTimeout(resolve, 1000)); // lazy load
     }
 
     const links = document.querySelectorAll('.add-button');

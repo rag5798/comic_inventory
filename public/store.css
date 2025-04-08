@@ -49,3 +49,13 @@ a {
 .view-all-button:hover {
     background-color: #0056b3;
 }
+
+
+.home-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
